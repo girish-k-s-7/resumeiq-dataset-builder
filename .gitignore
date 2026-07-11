@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Virtual Environment
+.venv/
+venv/
+
+# Environment Variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Type Checking
+.mypy_cache/
+
+# Ruff
+.ruff_cache/
+
+# Generated Files
+generated/pdf/*
+generated/json/*
+
+# Logs
+*.log
+
+# SQLite
+*.db
+*.sqlite3
+
+# Build
+build/
+dist/
+*.egg-info/
