@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate_0001</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 30px 40px;
+            color: #1a1a1a;
+            background: white;
+            font-size: 12.5px;
+            line-height: 1.5;
+        }
+
+        .resume-header {
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .resume-name {
+            font-size: 23px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .resume-title {
+            font-size: 13px;
+            color: #444;
+            margin-top: 3px;
+            font-weight: 600;
+        }
+
+        .contact-row {
+            margin-top: 6px;
+            font-size: 11.5px;
+            color: #333;
+        }
+
+        .contact-row span:not(:last-child)::after {
+            content: " | ";
+            color: #999;
+        }
+
+        .section {
+            margin-top: 16px;
+        }
+
+        .section-title {
+            font-size: 12.5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1.3px solid #1a1a1a;
+            padding-bottom: 3px;
+            margin-bottom: 8px;
+            letter-spacing: 0.6px;
+        }
+
+        .summary {
+            text-align: left;
+        }
+
+        .skills {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .skill-row {
+            display: flex;
+        }
+
+        .skill-category {
+            width: 175px;
+            flex-shrink: 0;
+            font-weight: bold;
+            color: #1a1a1a;
+        }
+
+        .skill-items {
+            flex: 1;
+            color: #222;
+        }
+
+        .entry {
+            margin-bottom: 11px;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .entry-title {
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .entry-date {
+            font-size: 11.5px;
+            color: #555;
+            white-space: nowrap;
+        }
+
+        .entry-subtitle {
+            margin-top: 1px;
+            color: #444;
+        }
+
+        ul {
+            margin-top: 5px;
+            margin-left: 18px;
+        }
+
+        li {
+            margin-bottom: 4px;
+            text-align: left;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="resume-header">
+
+        <div class="resume-name">
+            CANDIDATE_0001
+        </div>
+
+        <div class="resume-title">
+            Software Engineer
+        </div>
+
+        <div class="contact-row">
+            <span>candidate0001@resumeiq.dev</span>
+            <span>+91 90000 00001</span>
+            <span>guthub.com/in/candidate0001</span>
+            <span>linkedin.com/in/candidate0001</span>
+            <span>Banglore, India</span>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="summary">
+            Passionate software engineer with strong python and backend development skills.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Skills</div>
+        <div class="skills">
+            <div class="skill-row">
+                <div class="skill-category">Programming Languages:</div>
+                <div class="skill-items">Python</div>
+            </div>
+            <div class="skill-row">
+                <div class="skill-category">Frameworks:</div>
+                <div class="skill-items">FastAPI, Pydantic</div>
+            </div>
+            <div class="skill-row">
+                <div class="skill-category">Tools:</div>
+                <div class="skill-items">Git, Docker</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Experience</div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Software Engineer</div>
+                <div class="entry-date">Jan 2024 – Present</div>
+            </div>
+            <div class="entry-subtitle">ABC Technologies | Banglore, India</div>
+            <ul>
+                <li>Developed REST API's using FasteAPI.</li>
+                <li>Improved application performance.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <div class="section-title">Projects</div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">ResumeIQ Dataset Builder</div>
+                <div class="entry-date">2026</div>
+            </div>
+            <ul>
+                <li>Built an internal too for resume data set creation.</li>
+                <li>Genarated ATS friendly resume PDFs.</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+
+        <div class="entry">
+            <div class="entry-header">
+                <div class="entry-title">Bachelor of Engineering</div>
+                <div class="entry-date">2022 – 2026</div>
+            </div>
+            <div class="entry-subtitle">TOCE | Banglore, India</div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
