@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ resume.candidate.name }}</title>
+    <title>John Doe</title>
 
     <style>
         * {
@@ -160,204 +160,230 @@
         <div class="resume-header">
 
             <div class="resume-name">
-                {{ resume.candidate.name }}
+                John Doe
             </div>
 
-            {% if resume.candidate.title %}
+            
             <div class="resume-title">
-                {{ resume.candidate.title }}
+                Software Engineer
             </div>
-            {% endif %}
+            
 
             <div class="contact-row">
 
-                {% if resume.candidate.email %}
-                <span>{{ resume.candidate.email }}</span>
-                {% endif %}
+                
+                <span>john.doe@example.com</span>
+                
 
-                {% if resume.candidate.phone %}
-                <span>{{ resume.candidate.phone }}</span>
-                {% endif %}
+                
+                <span>+91 9876543210</span>
+                
 
-                {% if resume.candidate.github %}
-                <span>{{ resume.candidate.github }}</span>
-                {% endif %}
+                
+                <span>https://github.com/johndoe</span>
+                
 
-                {% if resume.candidate.linkedin %}
-                <span>{{ resume.candidate.linkedin }}</span>
-                {% endif %}
+                
+                <span>https://linkedin.com/in/johndoe</span>
+                
 
-                {% if resume.candidate.location %}
-                <span>{{ resume.candidate.location }}</span>
-                {% endif %}
+                
+                <span>Bengaluru, India</span>
+                
 
             </div>
 
         </div>
 
-        {% if resume.summary %}
+        
         <div class="section">
             <div class="section-title">Professional Summary</div>
             <div class="summary">
-                {{ resume.summary }}
+                Passionate Software Engineer with experience in Python, FastAPI, Machine Learning, and backend development. Strong interest in building scalable web applications and AI-powered products.
             </div>
         </div>
-        {% endif %}
+        
 
-        {% if resume.skills %}
+        
         <div class="section">
             <div class="section-title">Skills</div>
 
             <div class="summary">
-                {{ resume.skills | join(", ") }}
+                Python, FastAPI, Pydantic, SQL, PostgreSQL, Docker, Git, GitHub
             </div>
         </div>
-        {% endif %}
+        
 
-        {% if resume.experience %}
+        
         <div class="section">
             <div class="section-title">Experience</div>
 
-            {% for exp in resume.experience %}
+            
 
             <div class="entry">
 
                 <div class="entry-header">
-                    <div class="entry-title">{{ exp.role }}</div>
-                    <div class="entry-date">{{ exp.duration }}</div>
+                    <div class="entry-title">Software Engineer</div>
+                    <div class="entry-date">Jan 2024 - Present</div>
                 </div>
 
                 <div class="entry-subtitle">
-                    {{ exp.company }}
-                    {% if exp.location %}
-                    | {{ exp.location }}
-                    {% endif %}
+                    ABC Technologies
+                    
+                    | Bengaluru, India
+                    
                 </div>
 
-                {% if exp.description %}
+                
                 <ul>
-                    {% for point in exp.description %}
-                    <li>{{ point }}</li>
-                    {% endfor %}
+                    
+                    <li>Developed REST APIs using FastAPI.</li>
+                    
+                    <li>Improved backend performance by 30%.</li>
+                    
+                    <li>Worked with PostgreSQL and Docker.</li>
+                    
                 </ul>
-                {% endif %}
+                
 
             </div>
 
-            {% endfor %}
+            
 
         </div>
-        {% endif %}
+        
 
-        {% if resume.projects %}
+        
         <div class="section">
             <div class="section-title">Projects</div>
 
-            {% for project in resume.projects %}
+            
 
             <div class="entry">
 
                 <div class="entry-header">
-                    <div class="entry-title">{{ project.name }}</div>
-                    <div class="entry-date">{{ project.duration }}</div>
+                    <div class="entry-title">ResumeIQ</div>
+                    <div class="entry-date">2026</div>
                 </div>
 
-                {% if project.description %}
+                
                 <ul>
-                    {% for point in project.description %}
-                    <li>{{ point }}</li>
-                    {% endfor %}
+                    
+                    <li>Built an ATS-friendly resume generator.</li>
+                    
+                    <li>Generated PDF resumes using WeasyPrint.</li>
+                    
+                    <li>Developed REST APIs with FastAPI.</li>
+                    
                 </ul>
-                {% endif %}
+                
 
             </div>
 
-            {% endfor %}
+            
+
+            <div class="entry">
+
+                <div class="entry-header">
+                    <div class="entry-title">VulnWhisper</div>
+                    <div class="entry-date">2026</div>
+                </div>
+
+                
+                <ul>
+                    
+                    <li>Built an AI-powered bug bounty reconnaissance agent.</li>
+                    
+                    <li>Implemented ReAct reasoning workflow.</li>
+                    
+                    <li>Automated reconnaissance tasks.</li>
+                    
+                </ul>
+                
+
+            </div>
+
+            
 
         </div>
-        {% endif %}
+        
 
-        {% if resume.education %}
+        
         <div class="section">
             <div class="section-title">Education</div>
 
-            {% for edu in resume.education %}
+            
 
             <div class="entry">
 
                 <div class="entry-header">
-                    <div class="entry-title">{{ edu.degree }}</div>
-                    <div class="entry-date">{{ edu.duration }}</div>
+                    <div class="entry-title">Bachelor of Engineering in Computer Science</div>
+                    <div class="entry-date">2023 - 2027</div>
                 </div>
 
                 <div class="entry-subtitle">
-                    {{ edu.institution }}
-                    {% if edu.location %}
-                    | {{ edu.location }}
-                    {% endif %}
+                    Government SKSJTI
+                    
+                    | Bengaluru, India
+                    
                 </div>
 
             </div>
 
-            {% endfor %}
+            
 
         </div>
-        {% endif %}
+        
 
-        {% if resume.certifications %}
+        
         <div class="section">
             <div class="section-title">Certifications</div>
             <ul>
-                {% for cert in resume.certifications %}
-                <li>{{ cert }}</li>
-                {% endfor %}
+                
+                <li>AWS Cloud Practitioner</li>
+                
+                <li>Google AI Essentials</li>
+                
             </ul>
         </div>
-        {% endif %}
+        
 
-        {% if resume.achievements %}
+        
         <div class="section">
             <div class="section-title">Achievements</div>
             <ul>
-                {% for item in resume.achievements %}
-                <li>{{ item }}</li>
-                {% endfor %}
+                
+                <li>Won College Hackathon 2025</li>
+                
+                <li>Solved 300+ DSA problems</li>
+                
             </ul>
         </div>
-        {% endif %}
+        
 
-        {% if resume.publications %}
-        <div class="section">
-            <div class="section-title">Publications</div>
-            <ul>
-                {% for item in resume.publications %}
-                <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
+        
 
-        {% if resume.languages %}
+        
         <div class="section">
             <div class="section-title">Languages</div>
             <div class="skills">
                 <div class="skill-row">
-                    <div class="skill-items">{{ resume.languages | join(", ") }}</div>
+                    <div class="skill-items">English, Kannada, Hindi</div>
                 </div>
             </div>
         </div>
-        {% endif %}
+        
 
-        {% if resume.interests %}
+        
         <div class="section">
             <div class="section-title">Interests</div>
             <div class="skills">
                 <div class="skill-row">
-                    <div class="skill-items">{{ resume.interests | join(", ") }}</div>
+                    <div class="skill-items">Artificial Intelligence, Open Source, Backend Development</div>
                 </div>
             </div>
         </div>
-        {% endif %}
+        
 
     </div>
 

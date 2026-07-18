@@ -8,7 +8,7 @@ def save_resume(resume: Resume) -> Path:
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
-    file_path = OUTPUT_DIR / f"{resume.candidate.candidate_id.lower()}.josn"
+    file_path = OUTPUT_DIR / f"{resume.resume_id.lower()}.json"
 
     with open(file_path, "w", encoding="utf-8") as file:
         json.dump(

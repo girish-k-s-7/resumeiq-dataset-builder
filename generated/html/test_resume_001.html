@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ resume.candidate.name }}</title>
+    <title>Candidate_0001</title>
 
     <style>
         * {
@@ -160,204 +160,139 @@
         <div class="resume-header">
 
             <div class="resume-name">
-                {{ resume.candidate.name }}
+                CANDIDATE_0001
             </div>
 
-            {% if resume.candidate.title %}
             <div class="resume-title">
-                {{ resume.candidate.title }}
+                Software Engineer
             </div>
-            {% endif %}
 
             <div class="contact-row">
-
-                {% if resume.candidate.email %}
-                <span>{{ resume.candidate.email }}</span>
-                {% endif %}
-
-                {% if resume.candidate.phone %}
-                <span>{{ resume.candidate.phone }}</span>
-                {% endif %}
-
-                {% if resume.candidate.github %}
-                <span>{{ resume.candidate.github }}</span>
-                {% endif %}
-
-                {% if resume.candidate.linkedin %}
-                <span>{{ resume.candidate.linkedin }}</span>
-                {% endif %}
-
-                {% if resume.candidate.location %}
-                <span>{{ resume.candidate.location }}</span>
-                {% endif %}
-
+                <span>candidate0001@resumeiq.dev</span>
+                <span>+91 90000 00001</span>
+                <span>github.com/in/candidate0001</span>
+                <span>linkedin.com/in/candidate0001</span>
+                <span>Bangalore, India</span>
             </div>
 
         </div>
 
-        {% if resume.summary %}
         <div class="section">
             <div class="section-title">Professional Summary</div>
             <div class="summary">
-                {{ resume.summary }}
+                Passionate software engineer with strong Python and backend development skills.
             </div>
         </div>
-        {% endif %}
 
-        {% if resume.skills %}
         <div class="section">
             <div class="section-title">Skills</div>
-
-            <div class="summary">
-                {{ resume.skills | join(", ") }}
+            <div class="skills">
+                <div class="skill-row">
+                    <div class="skill-category">Programming Languages</div>
+                    <div class="skill-items">Python</div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-category">Frameworks</div>
+                    <div class="skill-items">FastAPI, Pydantic</div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-category">Tools</div>
+                    <div class="skill-items">Git, Docker</div>
+                </div>
             </div>
         </div>
-        {% endif %}
 
-        {% if resume.experience %}
         <div class="section">
             <div class="section-title">Experience</div>
 
-            {% for exp in resume.experience %}
-
             <div class="entry">
-
                 <div class="entry-header">
-                    <div class="entry-title">{{ exp.role }}</div>
-                    <div class="entry-date">{{ exp.duration }}</div>
+                    <div class="entry-title">Software Engineer</div>
+                    <div class="entry-date">Jan 2024 – Present</div>
                 </div>
-
-                <div class="entry-subtitle">
-                    {{ exp.company }}
-                    {% if exp.location %}
-                    | {{ exp.location }}
-                    {% endif %}
-                </div>
-
-                {% if exp.description %}
+                <div class="entry-subtitle">ABC Technologies | Bangalore, India</div>
                 <ul>
-                    {% for point in exp.description %}
-                    <li>{{ point }}</li>
-                    {% endfor %}
+                    <li>Developed REST APIs using FastAPI.</li>
+                    <li>Improved application performance.</li>
                 </ul>
-                {% endif %}
-
             </div>
 
-            {% endfor %}
-
         </div>
-        {% endif %}
 
-        {% if resume.projects %}
         <div class="section">
             <div class="section-title">Projects</div>
 
-            {% for project in resume.projects %}
-
             <div class="entry">
-
                 <div class="entry-header">
-                    <div class="entry-title">{{ project.name }}</div>
-                    <div class="entry-date">{{ project.duration }}</div>
+                    <div class="entry-title">ResumeIQ Dataset Builder</div>
+                    <div class="entry-date">2026</div>
                 </div>
-
-                {% if project.description %}
                 <ul>
-                    {% for point in project.description %}
-                    <li>{{ point }}</li>
-                    {% endfor %}
+                    <li>Built an internal tool for resume dataset creation.</li>
+                    <li>Generated ATS friendly resume PDFs.</li>
                 </ul>
-                {% endif %}
-
             </div>
 
-            {% endfor %}
-
         </div>
-        {% endif %}
 
-        {% if resume.education %}
         <div class="section">
             <div class="section-title">Education</div>
 
-            {% for edu in resume.education %}
-
             <div class="entry">
-
                 <div class="entry-header">
-                    <div class="entry-title">{{ edu.degree }}</div>
-                    <div class="entry-date">{{ edu.duration }}</div>
+                    <div class="entry-title">Bachelor of Engineering</div>
+                    <div class="entry-date">2022 – 2026</div>
                 </div>
-
-                <div class="entry-subtitle">
-                    {{ edu.institution }}
-                    {% if edu.location %}
-                    | {{ edu.location }}
-                    {% endif %}
-                </div>
-
+                <div class="entry-subtitle">TOCE | Bangalore, India</div>
             </div>
 
-            {% endfor %}
-
         </div>
-        {% endif %}
 
-        {% if resume.certifications %}
+        
         <div class="section">
             <div class="section-title">Certifications</div>
             <ul>
-                {% for cert in resume.certifications %}
-                <li>{{ cert }}</li>
-                {% endfor %}
+                
+                <li>AWS Cloud Practitioner</li>
+                
             </ul>
         </div>
-        {% endif %}
+        
 
-        {% if resume.achievements %}
+        
         <div class="section">
             <div class="section-title">Achievements</div>
             <ul>
-                {% for item in resume.achievements %}
-                <li>{{ item }}</li>
-                {% endfor %}
+                
+                <li>Won Hackathon 2025</li>
+                
             </ul>
         </div>
-        {% endif %}
+        
 
-        {% if resume.publications %}
-        <div class="section">
-            <div class="section-title">Publications</div>
-            <ul>
-                {% for item in resume.publications %}
-                <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
-        </div>
-        {% endif %}
+        
 
-        {% if resume.languages %}
+        
         <div class="section">
             <div class="section-title">Languages</div>
             <div class="skills">
                 <div class="skill-row">
-                    <div class="skill-items">{{ resume.languages | join(", ") }}</div>
+                    <div class="skill-items">English, Kannada</div>
                 </div>
             </div>
         </div>
-        {% endif %}
+        
 
-        {% if resume.interests %}
+        
         <div class="section">
             <div class="section-title">Interests</div>
             <div class="skills">
                 <div class="skill-row">
-                    <div class="skill-items">{{ resume.interests | join(", ") }}</div>
+                    <div class="skill-items">Open Source, AI</div>
                 </div>
             </div>
         </div>
-        {% endif %}
+        
 
     </div>
 

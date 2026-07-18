@@ -20,7 +20,7 @@ def save_html(resume: Resume) -> Path:
     """save the rendered html to a file"""
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     html = render_resume(resume)
-    file_path = OUTPUT_DIR / f"{resume.candidate.candidate_id.lower()}.html"
+    file_path = OUTPUT_DIR / f"{resume.resume_id.lower()}.html"
     with open(file_path, "w", encoding="utf-8") as file:
         file.write(html)
     return file_path
