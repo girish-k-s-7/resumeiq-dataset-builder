@@ -13,7 +13,7 @@ env = Environment(
 
 def render_resume(resume: Resume) -> str:
     """render a resume into html"""
-    template = env.get_template("ats_v1.html")
+    template = env.get_template(f"{resume.template}/ats_v1.html")
     return template.render(resume=resume)
 
 def save_html(resume: Resume) -> Path:

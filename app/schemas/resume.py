@@ -34,4 +34,6 @@ class Resume(BaseModel):
 
     additional_sections: list[str] = []
 
+    template: str = "classic"
+
     consent: bool = False

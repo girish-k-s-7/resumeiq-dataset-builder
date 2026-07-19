@@ -29,5 +29,7 @@ class ResumeCreate(BaseModel):
     interests: list[str] = []
 
     additional_sections: list[str] = []
+    
+    template: str = "classic"
 
     consent: bool = False
