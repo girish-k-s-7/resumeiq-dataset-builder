@@ -5,20 +5,21 @@ from app.services.template_services import save_html
 from app.services.pdf_services import save_pdf
 
 def generate_resume_files(resume: Resume) -> dict[str, Path]:
-    """Generate all resumeartifacts.
-    steps:
-    save resume as json
-    render and save html
-    generate pdf
+    generated_files = {}
 
-    returns: dictionary containing generated file paths."""
-
-    json_file = save_resume(resume)
     html_file = save_html(resume)
-    pdf_file = save_pdf(html_file)
 
-    return {
-        "json":json_file,
-        "html":html_file,
-        "pdf":pdf_file,
-    }
+    try:
+
+        pdf_file = save_pdf(html_file)
+        generated_files["pdf"] = pdf_file
+
+        if resume.consent:
+            json_file = save_resume(resume)
+
+            generated_files["json"] = json_file
+            generated_files["html"] = html_file
+    finally:
+        if not resume.consent:
+            html_file.unlink(missing_ok=True)
+    return generated_files

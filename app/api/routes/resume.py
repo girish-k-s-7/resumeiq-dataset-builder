@@ -36,7 +36,7 @@ async def generate_resume(resume_data: ResumeCreate):
 async def download_resume(resume_id: str):
     pdf_path = Path(f"generated/pdf/{resume_id}.pdf")
     if not pdf_path.exists():
-        raise HTTPExeception(
+        raise HTTPException(
             status_code=404,
             detail="Resume Not Found."
         )
