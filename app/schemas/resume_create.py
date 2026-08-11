@@ -1,35 +1,39 @@
 from pydantic import BaseModel
 
+from app.schemas.achievement import Achievement
 from app.schemas.candidate import Candidate
+from app.schemas.certification import Certification
 from app.schemas.education import Education
 from app.schemas.experience import Experience
 from app.schemas.project import Project
+from app.schemas.publication import Publication
+
 
 class ResumeCreate(BaseModel):
     candidate: Candidate
-    
+
     summary: str
 
     skills: list[str]
+
+    education: list[Education]
 
     experience: list[Experience]
 
     projects: list[Project]
 
-    education: list[Education]
+    certifications: list[Certification] = []
 
-    certifications: list[str] = []
-    
-    achievements: list[str] = []
+    achievements: list[Achievement] = []
 
-    publications: list[str] = []
+    publications: list[Publication] = []
 
     languages: list[str] = []
 
     interests: list[str] = []
 
     additional_sections: list[str] = []
-    
+
     template: str = "classic"
 
     consent: bool = False
