@@ -9,11 +9,12 @@ app = FastAPI(
     version="0.1.0",
 )
 
-# Allow requests from the React frontend
+# Allow requests from React frontend
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:5173",
+        "https://resumeiq-dataset-builder-frontend.onrender.com",
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -21,7 +22,6 @@ app.add_middleware(
 )
 
 app.include_router(resume_router)
-
 
 @app.get("/", tags=["Root"])
 def root():
