@@ -235,11 +235,9 @@
                 </div>
 
                 {% if exp.description %}
-                <ul>
-                    {% for point in exp.description %}
-                    <li>{{ point }}</li>
-                    {% endfor %}
-                </ul>
+                <div style="margin-top:4px;">
+                    {{ exp.description }}
+                </div>
                 {% endif %}
 
             </div>
@@ -263,11 +261,9 @@
                 </div>
 
                 {% if project.description %}
-                <ul>
-                    {% for point in project.description %}
-                    <li>{{ point }}</li>
-                    {% endfor %}
-                </ul>
+                <div style="margin-top:4px;">
+                    {{ project.description }}
+                </div>
                 {% endif %}
 
             </div>
@@ -307,33 +303,54 @@
         {% if resume.certifications %}
         <div class="section">
             <div class="section-title">Certifications</div>
-            <ul>
-                {% for cert in resume.certifications %}
-                <li>{{ cert }}</li>
-                {% endfor %}
-            </ul>
+
+            {% for cert in resume.certifications %}
+            <div class="entry">
+                <div class="entry-title">{{ cert.name }}</div>
+                <div class="entry-subtitle">
+                    {{ cert.issuer }}
+                    {% if cert.date %}
+                    | {{ cert.date }}
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+
         </div>
         {% endif %}
 
         {% if resume.achievements %}
         <div class="section">
             <div class="section-title">Achievements</div>
-            <ul>
-                {% for item in resume.achievements %}
-                <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
+
+            {% for item in resume.achievements %}
+            <div class="entry">
+                <div class="entry-title">{{ item.title }}</div>
+                <div class="entry-subtitle">
+                    {{ item.description }}
+                </div>
+            </div>
+            {% endfor %}
+
         </div>
         {% endif %}
 
         {% if resume.publications %}
         <div class="section">
             <div class="section-title">Publications</div>
-            <ul>
-                {% for item in resume.publications %}
-                <li>{{ item }}</li>
-                {% endfor %}
-            </ul>
+
+            {% for item in resume.publications %}
+            <div class="entry">
+                <div class="entry-title">{{ item.title }}</div>
+                <div class="entry-subtitle">
+                    {{ item.publisher }}
+                    {% if item.date %}
+                    | {{ item.date }}
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+
         </div>
         {% endif %}
 
